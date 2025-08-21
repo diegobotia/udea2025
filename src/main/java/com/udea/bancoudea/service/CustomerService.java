@@ -27,13 +27,11 @@ public class CustomerService {
     }
 
     public CustomerDTO getCustomerById(Long id){
-        return customerRepository.findById(id).map(customerMapper::toDTO)
-                .orElseThrow(()->new RuntimeException("Cliente no encontrado"));
+
     }
 
     public CustomerDTO createCustomer(CustomerDTO customerDTO){
-        Customer customer = customerMapper.toEntity(customerDTO);
-        return customerMapper.toDTO(customerRepository.save(customer));
+
     }
 
 
